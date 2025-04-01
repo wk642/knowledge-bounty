@@ -27,15 +27,29 @@ This is a gamified blog app that will allow users to do the following:
 
 [:arrow_up: back to top](#contents)
 ## :movie_camera: Demo <a name="demo"></a>
-[back to top](#contents)
+[:arrow_up: back to top](#contents)
 
 ## :brain: Follow what happens in my head during this project <a name="brain"></a>
 <ins>**What is a blog to me?**</ins>
 > *It is a place where users can post up short or long articles or link to other resources on things they are interested in.* 
+
+[:arrow_up: back to top](#contents)
+
+<ins>**Things to install**</ins>
+- [x] npm 
+- [x] express
+- [x] cors
+- [x] concurrently
+- [x] tailwinds
+- [ ] Google Authentication
+- [ ] jwt-decoder
+- [ ] routes
+- [ ] routes-dom
+
 [:arrow_up: back to top](#contents)
 
 ## :bulb: Nice to haves <a name="nice"></a>
 [:arrow_up: back to top](#contents)
 
 ## :mag_right: Spike Doc <a name="spike"></a>
-[back to top](#contents)
+[:arrow_up: back to top](#contents)
