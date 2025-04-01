@@ -4,9 +4,10 @@
 1. :dart: [OBJECTIVES](#objectives)
 2. :heavy_check_mark: [PREREQUISITES](#prerquisistes)
 3. :movie_camera: [Demo](#demo)
-4. :brain: [Follow what happens in my head during this project](#brain)
-5. :bulb: [Nice to haves](#nice)
-6. :mag_right: [Spike Doc](#spike)
+4. :run: [How to run this](#run)
+5. :brain: [Follow what happens in my head during this project](#brain)
+6. :bulb: [Nice to haves](#nice)
+7. :mag_right: [Spike Doc](#spike)
 
 ## :dart: OBJECTIVES <a name="objectives"></a>
 Welcome to 🌪️Tornado🌪️ the gamified blog. 
@@ -31,6 +32,18 @@ Let's making blogs fun! Users will be able to do the following:
 
 [:arrow_up: back to top](#contents)
 ## :movie_camera: Demo <a name="demo"></a>
+[:arrow_up: back to top](#contents)
+
+## :runner: [How to run this](#run)
+  1. Clone this project
+    `git clone https://github.com/wk642/tornado.git`
+  2. Go into this folder in your terminal or vscode and run the following:
+    `npm install`
+  3. To load my database and table:
+    `npm run loadDB`
+  4. If you would like to have some mock data in it so you can see how it runs
+    `npm run seed`
+
 [:arrow_up: back to top](#contents)
 
 ## :brain: Follow what happens in my head during this project <a name="brain"></a>

@@ -8,6 +8,8 @@
     "server": "nodemon server/server.js",
     "dev": "concurrently \"npm run client\" \"npm run server\"",
     "test": "jest",
+    "loadDB": "/usr/local/bin/psql -f server/database/dump.sql",
+    "seed": "/usr/local/bin/psql -f server/seed.js",
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview"
