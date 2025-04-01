@@ -1,12 +1,41 @@
-# React + Vite
+# [![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=20&pause=1000&center=true&vCenter=true&multiline=true&lines=KNOWLEDGE+BOUNTY)](https://git.io/typing-svg)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## TABLE OF CONTENTS <a name="contents"></a>
+1. [OBJECTIVES](#objectives)
+2. [PREREQUISITES](#prerquisistes)
+3. [Demo](#demo)
+4. [My Journey](#journey)
+5. [Nice to haves](#nice)
+6. [Spike Doc](#spike)
 
-Currently, two official plugins are available:
+## OBJECTIVES <a name="objectives"></a>
+This is a gamified blog app that will allow users to do the following:
+- [ ] Browswe the different articles
+- [ ] Utilize AI to get a text summarization of the blog post. 
+- [ ] Sign into their Google account so that they can be part of the game.
+- [ ] Earn badges for completing different tasks
+- [ ] Earn "bounty points"
+- [ ] Level up
+- [ ] See their statics 
+- [ ] Save and bookmark posts
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## PREREQUISITES <a name="prerquisistes"></a>
+- [ ] Postgres
+- [ ] Express
+- [ ] React
+- [ ] Node
 
-## Expanding the ESLint configuration
+[back to top](#contents)
+## Demo <a name="demo"></a>
+[back to top](#contents)
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## My Journey <a name="journey"></a>
+<ins>**What is a blog to me?**</ins>
+> *It is a place where users can post up short or long articles or link to other resources on things they are interested in.* 
+[back to top](#contents)
+
+## Nice to haves <a name="nice"></a>
+[back to top](#contents)
+
+## Spike Doc <a name="spike"></a>
+[back to top](#contents)
