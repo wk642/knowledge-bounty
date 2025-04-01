@@ -36,11 +36,13 @@ This is a gamified blog app that will allow users to do the following:
 [:arrow_up: back to top](#contents)
 
 <ins>**Things to install**</ins>
-- [x] npm 
-- [x] express
-- [x] cors
-- [x] concurrently
-- [x] tailwinds
+- [x] npm `npm install`
+- [x] express `npm install express`
+- [x] cors `npm install cors`
+- [x] concurrently `npm install concurrently`
+- [x] nodemon `npm install nodemon`
+- [x] pg-promise `npm install pg-promise`
+- [x] [tailwinds](https://tailwindcss.com/docs/installation/using-vite) `npm install tailwindcss @tailwindcss/vite` 
 - [ ] Google Authentication
 - [ ] jwt-decoder
 - [ ] routes
