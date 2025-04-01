@@ -44,11 +44,17 @@ This is a gamified blog app that will allow users to do the following:
 - [x] pg-promise `npm install pg-promise`
 - [x] [tailwinds](https://tailwindcss.com/docs/installation/using-vite) `npm install tailwindcss @tailwindcss/vite` 
 - [ ] Google Authentication
-- [ ] jwt-decoder
-- [ ] routes
-- [ ] routes-dom
+  - [ ] jwt-decoder
+  - [ ] routes
+  - [ ] routes-dom
+- [x] Jest Testing - going to try unit testing this time 
+  - [x] What I did to get it to work this time:
+    - [x] `npm install --save-dev jest babel-jest @babel/preset-env @babel/preset-react`
+    - [x]  `npm install --save-dev @testing-library/react @testing-library/dom`
+    - [x] `npm i jest-environment-jsdom`
 
 [:arrow_up: back to top](#contents)
+
 
 ## :bulb: Nice to haves <a name="nice"></a>
 [:arrow_up: back to top](#contents)
