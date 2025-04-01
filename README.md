@@ -1,4 +1,4 @@
-# [![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=20&pause=1000&center=true&vCenter=true&multiline=true&lines=KNOWLEDGE+BOUNTY)](https://git.io/typing-svg)
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&letterSpacing=1px&duration=6000&pause=999&color=F78F00&center=true&vCenter=true&width=435&lines=%F0%9F%8C%AA%EF%B8%8F+Tornado%F0%9F%8C%AA%EF%B8%8F)](https://git.io/typing-svg)
 
 ## TABLE OF CONTENTS <a name="contents"></a>
 1. :dart: [OBJECTIVES](#objectives)
@@ -9,12 +9,16 @@
 6. :mag_right: [Spike Doc](#spike)
 
 ## :dart: OBJECTIVES <a name="objectives"></a>
-This is a gamified blog app that will allow users to do the following:
+Welcome to 🌪️Tornado🌪️ the gamified blog. 
+
+<ins>**History**</ins> of why this app is called Tornado. At the time of planning for this app, I was up in the middle of the night, where one screen I was staring at the maps watching this tornado get closer and closer to us, and making sure that kiddo and I would get into shelter at the right time until we are in the clear. Which lead me into expanding my planning from a simple blog app, into a gamified blog app. Speaking to a mentor about my planning process, she suggested I should call this app Tornado, so in honor of that tornado, here we are! Welcome to Torando.
+
+Let's making blogs fun! Users will be able to do the following: 
 - [ ] Browswe the different articles
 - [ ] Utilize AI to get a text summarization of the blog post. 
 - [ ] Sign into their Google account so that they can be part of the game.
 - [ ] Earn badges for completing different tasks
-- [ ] Earn "bounty points"
+- [ ] Earn "tornados", which is a point system
 - [ ] Level up
 - [ ] See their statics 
 - [ ] Save and bookmark posts
