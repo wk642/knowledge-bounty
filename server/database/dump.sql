@@ -41,4 +41,11 @@ CREATE TABLE IF NOT EXISTS user_achievements (
   id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
   user_id UUID REFERENCES users(id),
   achievement_id UUID REFERENCES achievements(id)
+  -- CONSTRAINT fk_users FOREIGN KEY(user_id) REFERENCES users(id),
+  -- CONSTRAINT fk_achievements FOREIGN KEY(achievement_id) REFERENCES achievements(id)
 )
+
+-- Given a user id, what are that user’s ahievements
+-- Given an achievement, what users have that achievement
+-- Write bad queries in your seed file, if the bad queries work, add more database constraints
+-- I.e. INSERT INTO user_achievements VALUE (user_id, achievement_id) ( 24 (a user that does not exist ), 2)
