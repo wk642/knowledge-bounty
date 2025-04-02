@@ -175,5 +175,5 @@ INSERT INTO achievements (points, title) VALUES
 -- USERS_ACHIEVEMENTS table
 INSERT INTO user_achievements (user_id, achievement_id) VALUES
 ((SELECT id FROM users WHERE email = 'john.doe@tornado.com'), (SELECT id FROM achievements WHERE title = 'EF1')),
-((SELECT id FROM users WHERE email = 'jane.doe@tornado.com'), (SELECT id FROM achievements WHERE title = 'EF0')),
-((SELECT id FROM users WHERE email = 'sample.tornado@tornado.com'), (SELECT id FROM achievements WHERE title = 'EF0'));
+((SELECT id FROM users WHERE email = 'jane.doe@tornado.com'), (SELECT id FROM achievements WHERE title = 'EF0' AND points ='80')),
+((SELECT id FROM users WHERE email = 'sample.tornado@tornado.com'), (SELECT id FROM achievements WHERE title = 'EF0' AND points ='50'));
