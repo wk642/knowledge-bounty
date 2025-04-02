@@ -1,9 +1,9 @@
 import React from 'react';
-
+import ListPosts from './components/ListPosts';
 function App() {
   return(
     <>
-      <h1>Tornado</h1>
+      <ListPosts />
     </>
   )
 }
