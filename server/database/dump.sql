@@ -10,11 +10,11 @@ CREATE DATABASE tornado;
 
 -- CREATE tables 
 -- USERS - one to many 
-CREATE TABLE users (
+CREATE TABLE IF NOT EXISTS users (
   id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
   first_name VARCHAR,
   last_name VARCHAR,
-  email VARCHAR,
+  email VARCHAR UNIQUE, -- don't wnat to have duplicated
   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
@@ -23,22 +23,22 @@ CREATE TABLE IF NOT EXISTS posts (
   id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
   user_id UUID REFERENCES users(id), 
   title text,
-  content text, -- can't use entry, it is a keyword
+  content text,
+  category varchar,
+  subcategory varchar,
   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
 -- ACHIEVEMENTS - one to many
-CREATE TABLE achievements (
+CREATE TABLE IF NOT EXISTS achievements (
   id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-  user_id UUID REFERENCES users(id),
-  ef VARCHAR,
-  badges VARCHAR, -- might change this to json because what if there's multiple badges
-  tornados INTEGER
+  points integer,
+  title varchar
 );
 
 -- USER_ACHIEVEMENT - many to many
-CREATE TABLE user_achievemnt (
+CREATE TABLE IF NOT EXISTS user_achievements (
   id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
   user_id UUID REFERENCES users(id),
-  achievements_id UUID REFERENCES achievements(id)
+  achievement_id UUID REFERENCES achievements(id)
 )
