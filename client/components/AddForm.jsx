@@ -10,7 +10,7 @@ export default function AddForm({ closeAddForm, refetchPosts }) {
     event.preventDefault();
 
     try {
-      const response = await fetch('/add/posts', {
+      const response = await fetch('http://localhost:5000/add/posts', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
