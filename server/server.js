@@ -28,6 +28,22 @@ app.get('/posts', async function(req, res) {
   }
 });
 
+// add posts
+app.post('/add/posts', async (req, res) => {
+  const { title, content, category, subcategory } = req.body;
+  try {
+    await db.none(
+      'INSERT INTO posts (title, content, category, subcategory) VALUES ($1, $2, $3, $4)',
+      [title, content, category, subcategory]
+    );
+
+    // console.log('Post created successfully:', { title, content, category, subcategory });
+    res.status(201).json({ message: 'Post created' });
+  } catch (err) {
+    console.error('Error creating post:', err);
+    res.status(500).json({ error: 'Failed to create post' });
+  }
+});
 
 app.listen(port, function() {
   console.log('Server is running on port ' + port);
