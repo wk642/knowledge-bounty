@@ -40,7 +40,7 @@ export default function ListPosts() {
   if (error) return <p>Error: {error.message}</p>;
 
 return (
-  <div className="min-h-screen p-8 text-gray-500 bg-gradient-to-t from-blue-500 to-green-100">
+  <div className="min-h-screen p-8 text-gray-500 bg-gradient-to-t from-slate-900 to-green-900">
         <h1 className="text-9xl font-bold mb-8 text-center bg-clip-text text-transparent bg-gradient-to-t from-blue-700 to-blue-100">Tornado</h1>
         <div className="space-y-6">
             {posts.map(post => (
