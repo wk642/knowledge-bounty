@@ -1,0 +1,9 @@
+{
+    "$schema": "https://json.schemastore.org/prettierrc.json",
+    "tabWidth": 4,
+    "useTabs": false,
+    "semi": true,
+    "singleQuote": false,
+    "quoteProps": "consistent",
+    "parser": "babel"
+}
