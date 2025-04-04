@@ -12,6 +12,7 @@
         "yzhang.markdown-all-in-one",
         "esbenp.prettier-vscode",
         "pflannery.vscode-versionlens",
-        "redhat.vscode-yaml"
+        "redhat.vscode-yaml",
+        "lacroixdavid1.vscode-format-context-menu"
     ]
 }
