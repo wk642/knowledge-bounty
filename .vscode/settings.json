@@ -34,7 +34,7 @@
   },
   "prettier.configPath": ".prettierrc",
   "eslint.enable": true,
-  "eslint.lintTask.enable": false,
+  "eslint.lintTask.enable": true,
   "tasks-panel.search.gruntTasks": false,
   "tasks-panel.search.gulpTasks": false,
   "tasks-panel.search.npmTasks": true,
@@ -46,5 +46,6 @@
   },
   "[xml]": {
     "editor.defaultFormatter": "DotJoshJohnson.xml"
-  }
+  },
+  "eslint.useFlatConfig": true,
 }
