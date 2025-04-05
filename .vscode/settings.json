@@ -1,0 +1,38 @@
+{
+    "$schema": "vscode://schemas/settings/workspace",
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.detectIndentation": false,
+    "editor.tabSize": 4,
+    "editor.insertSpaces": true,
+    "editor.wordWrap": "off",
+    "errorLens.codeLensEnabled": false,
+    "explorer.fileNesting.enabled": true,
+    "explorer.fileNesting.expand": true,
+    "explorer.fileNesting.patterns": {
+        "*.ts": "${capture}.js",
+        "*.js": "${capture}.js.map, ${capture}.min.js, ${capture}.d.ts",
+        "*.jsx": "${capture}.js",
+        "*.tsx": "${capture}.ts",
+        "tsconfig.json": "tsconfig.*.json",
+        "package.json": "package-lock.json, yarn.lock",
+        "README.md": "LICENSE.txt",
+        ".eslintrc.*": ".eslintignore, .prettierrc.*, .eslintrc-auto-import.json"
+    },
+    "files.exclude": {
+        "**/.git": true,
+        "**/.DS_Store": true,
+        "**/node_modules": true,
+        "**/obj": true,
+        "**/bin": false
+    },
+    "markdownlint.config": {
+        "MD013": false,
+        "MD041": false
+    },
+    "prettier.configPath": ".prettierrc",
+    "eslint.enable": true,
+    "eslint.lintTask.enable": false,
+    "tasks-panel.search.gruntTasks": false,
+    "tasks-panel.search.gulpTasks": false,
+    "tasks-panel.search.npmTasks": true
+}
