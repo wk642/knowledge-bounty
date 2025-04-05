@@ -2,9 +2,11 @@
     "$schema": "vscode://schemas/settings/workspace",
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.detectIndentation": false,
-    "editor.tabSize": 4,
+    "editor.tabSize": 2,
     "editor.insertSpaces": true,
     "editor.wordWrap": "off",
+    "emmet.showSuggestionsAsSnippets": false,
+    "emmet.useInlineCompletions": true,
     "errorLens.codeLensEnabled": false,
     "explorer.fileNesting.enabled": true,
     "explorer.fileNesting.expand": true,
@@ -29,10 +31,19 @@
         "MD013": false,
         "MD041": false
     },
-    "prettier.configPath": ".prettierrc",
+    // "prettier.configPath": ".prettierrc",
     "eslint.enable": true,
     "eslint.lintTask.enable": false,
     "tasks-panel.search.gruntTasks": false,
     "tasks-panel.search.gulpTasks": false,
-    "tasks-panel.search.npmTasks": true
+    "tasks-panel.search.npmTasks": true,
+    "[json]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "[html]": {
+        "editor.defaultFormatter": "vscode.html-language-features"
+    },
+    "[xml]": {
+        "editor.defaultFormatter": "DotJoshJohnson.xml"
+    }
 }
