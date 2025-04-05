@@ -5,6 +5,7 @@ import eslintPluginReactHooks from "eslint-plugin-react-hooks";
 import eslintPlutinReactRefresh from "eslint-plugin-react-refresh";
 import eslintPluginPrettier from "eslint-config-prettier/flat";
 import eslintPluginStylistic from "@stylistic/eslint-plugin";
+import eslintPluginHtml from "eslint-plugin-html";
 
 export default [
   js.configs.recommended,
@@ -15,6 +16,9 @@ export default [
   eslintPluginStylistic.configs["recommended"],
   {
     files: ["**/*.{js,jsx}"],
+    plugins: {
+      eslintPluginHtml
+    },
     languageOptions: {
       sourceType: "module",
       globals: {
@@ -52,6 +56,7 @@ export default [
         { after: true, before: false },
       ],
       "@stylistic/linebreak-style": ["error", "windows"],
+      "@stylistic/no-trailing-spaces": ["error", { skipBlankLines: true }],
       "@stylistic/quotes": ["warn", "double"],
       "@stylistic/quote-props": [
         "error",
