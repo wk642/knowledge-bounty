@@ -28,6 +28,12 @@
     "**/obj": true,
     "**/bin": false
   },
+  "files.associations": {
+    "*.ps": "powershell",
+    "*.json": "jsonc",
+    "*.jsonpb": "json",
+    "*.sql": "postgres"
+  },
   "markdownlint.config": {
     "MD013": false,
     "MD041": false
@@ -48,5 +54,14 @@
     "editor.defaultFormatter": "DotJoshJohnson.xml"
   },
   "eslint.useFlatConfig": true,
-  "eslint.validate": ["javascript", "html"]
+  "eslint.validate": [
+    "javascript",
+    "html",
+    "css",
+    "javascriptreact",
+    "json",
+    "yaml",
+    "sql"
+  ],
+  "eslint.debug": true
 }
