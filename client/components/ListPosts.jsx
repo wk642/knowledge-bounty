@@ -62,6 +62,23 @@ export default function ListPosts({ refetchPosts }) {
     }
   };
 
+  // handle bookmark
+  const handleToggleBookmark = async (post) => {
+    try {
+      const toggleBookmark = await fetch(`http://localhost:5000/posts/${post.id}/bookmark`, {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ bookmarked: !post.bookmarked }),
+      }).then(res => res.json());
+
+      setPosts(posts.map(p => p.id === toggleBookmark.id ? toggleBookmark : p));
+    } catch (error) {
+      console.error('Error toggling bookmark:', error);
+    }
+  };
+
   return (
     <div className="min-h-screen p-8 text-gray-500 bg-gradient-to-t from-slate-900 to-green-900">
       <h1 className="text-9xl font-bold mb-8 text-center bg-clip-text text-transparent bg-gradient-to-t from-blue-700 to-blue-100">Tornado</h1>
@@ -90,6 +107,20 @@ export default function ListPosts({ refetchPosts }) {
             >
               <i className="fa-solid fa-trash"></i>
             </button>
+
+            {/* Bookmark button */}
+            <button
+                onClick={(e) => {
+                  e.stopPropagation(); 
+                  handleToggleBookmark(post);
+                }}
+                className={`p-2 rounded ${
+                  post.bookmarked ? 'bg-yellow-500 text-gray-800' : 'bg-gray-600 text-yellow-300 hover:bg-yellow-600 hover:text-gray-800'
+                } mr-2`}
+              >
+                <i className={`fa-bookmark ${post.bookmarked ? 'fas' : 'far'}`}></i>
+              </button>
+
           </div>
         ))}
       </div>

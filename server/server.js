@@ -20,7 +20,7 @@ app.get('/test-connection', function(req, res) {
 // GET - all posts
 app.get('/posts', async function(req, res) {
   try {
-    const posts = await db.any('SELECT id, title, content, category, subcategory FROM posts');
+    const posts = await db.any('SELECT id, title, content, category, subcategory, bookmarked FROM posts');
     res.json(posts);
   } catch (err) {
     console.error(err);
@@ -58,6 +58,25 @@ app.delete('/delete/posts/:id', async (req, res) => {
   } catch (err) {
     console.error('Error deleting post:', err);
     res.status(500).json({ error: 'Failed to delete post' });
+  }
+});
+
+// bookmark post - PUT
+app.put('/posts/:id/bookmark', async (req, res) => {
+  const postId = req.params.id;
+  const { bookmarked } = req.body;
+
+  try {
+    const result = await db.oneOrNone('UPDATE posts SET bookmarked = $1 WHERE id = $2 RETURNING id, title, content, category, subcategory, bookmarked', [bookmarked, postId]);
+
+    if (result) {
+      res.json(result);
+    } else {
+      res.status(404).json({ error: `Post with ID ${postId} not found` });
+    }
+  } catch (error) {
+    console.error('Error updating bookmark:', error);
+    res.status(500).json({ error: 'Failed to update bookmark status' });
   }
 });
 
