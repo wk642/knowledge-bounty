@@ -88,7 +88,7 @@ export default function ListPosts({ refetchPosts }) {
               }}
               className="ml-4 p-2 bg-red-600 text-white rounded hover:bg-red-700"
             >
-              <i class="fa-solid fa-trash"></i>
+              <i className="fa-solid fa-trash"></i>
             </button>
           </div>
         ))}
