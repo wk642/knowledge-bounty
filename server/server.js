@@ -20,7 +20,7 @@ app.get('/test-connection', function(req, res) {
 // GET - all posts
 app.get('/posts', async function(req, res) {
   try {
-    const posts = await db.any('SELECT title, content, category, subcategory FROM posts');
+    const posts = await db.any('SELECT id, title, content, category, subcategory FROM posts');
     res.json(posts);
   } catch (err) {
     console.error(err);
@@ -42,6 +42,22 @@ app.post('/add/posts', async (req, res) => {
   } catch (err) {
     console.error('Error creating post:', err);
     res.status(500).json({ error: 'Failed to create post' });
+  }
+});
+
+// delete posts
+app.delete('/delete/posts/:id', async (req, res) => {
+  const postId = req.params.id;
+  try {
+    const result = await db.result('DELETE FROM posts WHERE id = $1', [postId]);
+    if (result.rowCount > 0) {
+      res.json({ message: `Post with ID ${postId} deleted successfully` });
+    } else {
+      res.status(404).json({ error: `Post with ID ${postId} not found` });
+    }
+  } catch (err) {
+    console.error('Error deleting post:', err);
+    res.status(500).json({ error: 'Failed to delete post' });
   }
 });
 
