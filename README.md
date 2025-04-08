@@ -29,8 +29,7 @@ Let's making blogs fun! Users will be able to do the following:
 - [ ] Node
 
 ## :movie_camera: Demo
-
-Coming soon
+![demo](https://github.com/user-attachments/assets/601ea0c3-c1d3-4e0a-9eae-ef97540bf51d)
 
 ## :runner: How to run this
 
@@ -47,6 +46,9 @@ Coming soon
 
 **What is a blog to me?**
 > It is a place where users can post up short or long articles or link to other resources on things they are interested in.*
+
+- [ ] Database Schema
+![schema](https://github.com/user-attachments/assets/2834120c-ca23-47e5-b367-ddebc45c454c)
 
 ### Things to install
 
@@ -69,8 +71,13 @@ Coming soon
 
 ## :bulb: Nice to haves
 
-Coming soon
+- [ ] Add Google login so that we can save user's data
+- [ ] Implement badges
+- [ ] Implement levels
+- [ ] fix api for text summarization
+- [ ] look at issues to complete more AI implementations
 
 ## :mag_right: Spike Doc
 
+- [ ] 429 error handling, how do I cache or store data from api so I do not run into qny 429 errors
 Coming soon
