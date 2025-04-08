@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
-import FigmaCardsIcon from '../assets/icons/FigmaCardsIcon.png';
-import FigmaLeaderboard from '../assets/icons/FigmaLeaderboard.png';
-import AddForm from './AddForm';
+import React, { useState } from "react";
+import FigmaCardsIcon from "../assets/icons/FigmaCardsIcon.png";
+import FigmaLeaderboard from "../assets/icons/FigmaLeaderboard.png";
+import AddForm from "./AddForm";
 
 export default function SideMenu({ children, refetchPosts }) {
   // state
@@ -19,7 +19,7 @@ export default function SideMenu({ children, refetchPosts }) {
     setAddFormOpen(true);
   };
 
-  // close form 
+  // close form
   const closeAddForm = () => {
     setAddFormOpen(false);
   };
@@ -30,14 +30,16 @@ export default function SideMenu({ children, refetchPosts }) {
         {/* Top Half */}
         <button onClick={toggleMenu} className="p-4">
           {/* Hamburger / x  */}
-          {sideMenuOpen ? (
-            <i className="fa-solid fa-xmark" />
-          ) : (
-            <i className="fa-solid fa-bars" />
-          )}
+          {sideMenuOpen ?
+            (
+              <i className="fa-solid fa-xmark" />
+            ) :
+            (
+              <i className="fa-solid fa-bars" />
+            )}
         </button>
 
-        <div className={`flex flex-col space-y-1 p-1 ${sideMenuOpen ? 'w-36' : 'w-12'} h-screen`}>
+        <div className={`flex flex-col space-y-1 p-1 ${sideMenuOpen ? "w-36" : "w-12"} h-screen`}>
           <div className="flex flex-col space-y-1">
             {/* Switch Views - List or Cards, but right now just cards */}
             <button className="flex items-center p-2 rounded-md hover:bg-gray-700 transition-colors duration-200 justify-center">
@@ -102,7 +104,7 @@ export default function SideMenu({ children, refetchPosts }) {
         </div>
       </div>
 
-      <div className={`flex-1 ${sideMenuOpen ? 'pl-36' : 'pl-12'}`}>{children}</div>
+      <div className={`flex-1 ${sideMenuOpen ? "pl-36" : "pl-12"}`}>{children}</div>
 
       {/* Add Form */}
       {addFormOpen && <AddForm closeAddForm={closeAddForm} refetchPosts={refetchPosts} />}
