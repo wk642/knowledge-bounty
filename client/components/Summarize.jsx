@@ -1,18 +1,20 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from "react";
 
-export default function Summarize({ postId, content, onSummary }) {
+export default function Summarize({ postId, content, handleSummaryReceived }) {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
+  const [summary, setSummary] = useState(null);
 
+  // summarize
   const handleSummarize = async () => {
     setLoading(true);
     setError(null);
 
     try {
       const response = await fetch(`http://localhost:5000/summarize/post/${postId}`, {
-        method: 'POST',
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
         body: JSON.stringify({ content }),
       });
@@ -23,14 +25,21 @@ export default function Summarize({ postId, content, onSummary }) {
       }
 
       const data = await response.json();
-      onSummary(data.summary);
-    } catch (err) {
+      setSummary(data.summary);
+      handleSummaryReceived(data.summary);
+    }
+    catch (err) {
       setError(err.message);
-      console.error('Error during summarization:', err);
-    } finally {
-      setLoading(false);
+      console.error("Error during summarization:", err);
     }
   };
+
+  useEffect(() => {
+    if (summary === null && content) {
+      handleSummarize();
+    }
+  }, [postId, content, summary]);
+  // cannot include handleSummaryReceived, it will trigger an infinite loop
 
   if (loading) {
     return <button disabled>Summarizing...</button>;
@@ -41,8 +50,16 @@ export default function Summarize({ postId, content, onSummary }) {
   }
 
   return (
-    <button onClick={handleSummarize} className="mt-4 p-2 bg-blue-600 text-white rounded hover:bg-blue-700">
-      Summarize
-    </button>
+    <div>
+      {summary ?
+        (
+          <p className="mt-4 text-gray-300 italic">{summary}</p>
+        ) :
+        (
+          <button onClick={handleSummarize} className="mt-4 p-2 bg-blue-600 text-white rounded hover:bg-blue-700">
+            Summarize
+          </button>
+        )}
+    </div>
   );
-};
+}

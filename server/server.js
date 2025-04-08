@@ -1,6 +1,8 @@
 import express, { json } from "express";
 import cors from "cors";
 import pgPromise from "pg-promise";
+import OpenAI from "openai";
+import "dotenv/config";
 
 const app = express();
 const port = 5000;
@@ -11,6 +13,13 @@ app.use(json());
 // connect to database
 const pgp = pgPromise();
 const db = pgp("postgres://tpl622_6@localhost:5432/tornado");
+
+// Initialize OpenAI
+const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
+// console.log("open ai api key: ", process.env.OPENAI_API_KEY);
+
+// cache for openai
+const textSummaryCache = {};
 
 // Testing to make sure it connects to back end
 app.get("/test-connection", function(req, res) {
@@ -86,42 +95,37 @@ app.put("/posts/:id/bookmark", async (req, res) => {
   }
 });
 
-// delete posts
-app.delete("/delete/posts/:id", async (req, res) => {
-  const postId = req.params.id;
-  try {
-    const result = await db.result("DELETE FROM posts WHERE id = $1", [postId]);
-    if (result.rowCount > 0) {
-      res.json({ message: `Post with ID ${postId} deleted successfully` });
-    }
-    else {
-      res.status(404).json({ error: `Post with ID ${postId} not found` });
-    }
-  }
-  catch (err) {
-    console.error("Error deleting post:", err);
-    res.status(500).json({ error: "Failed to delete post" });
-  }
-});
+// OPENAI - text summarization
+app.post("/summarize/post/:postId", async (req, res) => {
+  const { postId } = req.params;
+  const { content } = req.body;
 
-// bookmark post - PUT
-app.put("/posts/:id/bookmark", async (req, res) => {
-  const postId = req.params.id;
-  const { bookmarked } = req.body;
+  if (!content) {
+    return res.status(400).json({ error: "Content to summarize is missing." });
+  }
+
+  // Check if summary exists in cache
+  if (textSummaryCache[postId]) {
+    return res.json({ summary: textSummaryCache[postId] });
+  }
 
   try {
-    const result = await db.oneOrNone("UPDATE posts SET bookmarked = $1 WHERE id = $2 RETURNING id, title, content, category, subcategory, bookmarked", [bookmarked, postId]);
+    const completion = await openai.chat.completions.create({
+      model: "gpt-3.5-turbo",
+      messages: [
+        { role: "system", content: "Summarize the following text concisely." },
+        { role: "user", content: content },
+      ],
+    });
 
-    if (result) {
-      res.json(result);
-    }
-    else {
-      res.status(404).json({ error: `Post with ID ${postId} not found` });
-    }
+    const summary = completion.choices[0].message.content;
+    // Store the summary in the cache
+    textSummaryCache[postId] = summary;
+    res.json({ summary });
   }
   catch (error) {
-    console.error("Error updating bookmark:", error);
-    res.status(500).json({ error: "Failed to update bookmark status" });
+    console.error("Error during summarization:", error);
+    res.status(500).json({ error: "Failed to summarize text." });
   }
 });
 
