@@ -26,6 +26,7 @@ CREATE TABLE IF NOT EXISTS posts (
   content text,
   category varchar,
   subcategory varchar,
+  bookmarked boolean,
   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 

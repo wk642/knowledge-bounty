@@ -43,12 +43,14 @@ export default function AddForm({ closeAddForm, refetchPosts }) {
             value={title}
             onChange={e => setTitle(e.target.value)}
             className="p-2 rounded bg-gray-700 text-white"
+            required
           />
           <textarea
             placeholder="Content"
             value={content}
             onChange={e => setContent(e.target.value)}
             className="p-2 rounded bg-gray-700 text-white"
+            required
           />
           <input
             type="text"
