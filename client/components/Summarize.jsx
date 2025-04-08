@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 export default function Summarize({ postId, content, onSummary }) {
   const [loading, setLoading] = useState(false);
@@ -10,9 +10,9 @@ export default function Summarize({ postId, content, onSummary }) {
 
     try {
       const response = await fetch(`http://localhost:5000/summarize/post/${postId}`, {
-        method: 'POST',
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
         body: JSON.stringify({ content }),
       });
@@ -24,11 +24,10 @@ export default function Summarize({ postId, content, onSummary }) {
 
       const data = await response.json();
       onSummary(data.summary);
-    } catch (err) {
+    }
+    catch (err) {
       setError(err.message);
-      console.error('Error during summarization:', err);
-    } finally {
-      setLoading(false);
+      console.error("Error during summarization:", err);
     }
   };
 

@@ -8,7 +8,7 @@ CREATE DATABASE tornado;
 -- connect to the database
 \connect tornado;
 
--- CREATE tables 
+-- CREATE tables                              
 -- USERS - one to many 
 CREATE TABLE IF NOT EXISTS users (
   id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
