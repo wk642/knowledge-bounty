@@ -63,5 +63,4 @@
     "yaml",
     "sql"
   ],
-  "eslint.debug": true
 }

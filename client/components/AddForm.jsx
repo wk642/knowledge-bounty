@@ -1,32 +1,34 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 export default function AddForm({ closeAddForm, refetchPosts }) {
-  const [title, setTitle] = useState('');
-  const [content, setContent] = useState('');
-  const [category, setCategory] = useState('');
-  const [subcategory, setSubcategory] = useState('');
+  const [title, setTitle] = useState("");
+  const [content, setContent] = useState("");
+  const [category, setCategory] = useState("");
+  const [subcategory, setSubcategory] = useState("");
 
   const handleSubmit = async (event) => {
     event.preventDefault();
 
     try {
-      const response = await fetch('http://localhost:5000/add/posts', {
-        method: 'POST',
+      const response = await fetch("http://localhost:5000/add/posts", {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
         body: JSON.stringify({ title, content, category, subcategory }),
       });
 
       if (response.ok) {
-        console.log('Post created successfully');
-        refetchPosts(); 
+        console.log("Post created successfully");
+        refetchPosts();
         closeAddForm();
-      } else {
-        console.error('Error creating post');
       }
-    } catch (error) {
-      console.error('Network error:', error);
+      else {
+        console.error("Error creating post");
+      }
+    }
+    catch (error) {
+      console.error("Network error:", error);
     }
   };
 
@@ -39,27 +41,27 @@ export default function AddForm({ closeAddForm, refetchPosts }) {
             type="text"
             placeholder="Title"
             value={title}
-            onChange={(e) => setTitle(e.target.value)}
+            onChange={e => setTitle(e.target.value)}
             className="p-2 rounded bg-gray-700 text-white"
           />
           <textarea
             placeholder="Content"
             value={content}
-            onChange={(e) => setContent(e.target.value)}
+            onChange={e => setContent(e.target.value)}
             className="p-2 rounded bg-gray-700 text-white"
           />
           <input
             type="text"
             placeholder="Category"
             value={category}
-            onChange={(e) => setCategory(e.target.value)}
+            onChange={e => setCategory(e.target.value)}
             className="p-2 rounded bg-gray-700 text-white"
           />
           <input
             type="text"
             placeholder="Subcategory"
             value={subcategory}
-            onChange={(e) => setSubcategory(e.target.value)}
+            onChange={e => setSubcategory(e.target.value)}
             className="p-2 rounded bg-gray-700 text-white"
           />
           <button

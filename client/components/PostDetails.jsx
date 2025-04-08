@@ -1,5 +1,5 @@
-import { Cross1Icon } from '@radix-ui/react-icons';
-import React from 'react';
+import { Cross1Icon } from "@radix-ui/react-icons";
+import React from "react";
 
 export default function PostDetails({ post, closePostDetail }) {
   return (
@@ -13,7 +13,7 @@ export default function PostDetails({ post, closePostDetail }) {
           onClick={closePostDetail}
           className="absolute top-4 right-4 text-gray-400 hover:text-gray-200"
         >
-          <Cross1Icon className="w-5 h-5"/>
+          <Cross1Icon className="w-5 h-5" />
         </button>
       </div>
     </div>

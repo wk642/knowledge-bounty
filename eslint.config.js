@@ -24,6 +24,7 @@ export default [
       globals: {
         ...globals.browser,
         ...globals.es2025,
+        ...globals.jest,
       },
     },
     rules: {
@@ -55,7 +56,7 @@ export default [
         "error",
         { after: true, before: false },
       ],
-      "@stylistic/linebreak-style": ["error", "windows"],
+      // "@stylistic/linebreak-style": ["error", "windows"],
       "@stylistic/no-trailing-spaces": ["error", { skipBlankLines: true }],
       "@stylistic/quotes": ["warn", "double"],
       "@stylistic/quote-props": [
