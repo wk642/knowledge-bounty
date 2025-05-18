@@ -6,7 +6,7 @@
 
 ## :dart: OBJECTIVES
 
-Welcome to 🌪️Tornado🌪️ the gamified blog.
+Welcome to 🌪️Tornado🌪️ the gamified blog. (Work in progress)
 
 **History** of why this app is called Tornado. At the time of planning for this app, I was up in the middle of the night, where one screen I was staring at the maps watching this tornado get closer and closer to us, and making sure that kiddo and I would get into shelter at the right time until we are in the clear. Which lead me into expanding my planning from a simple blog app, into a gamified blog app. Speaking to a mentor about my planning process, she suggested I should call this app Tornado, so in honor of that tornado, here we are! Welcome to Torando.
 
